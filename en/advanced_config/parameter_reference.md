@@ -10379,6 +10379,8 @@ table {
 <li><strong>11:</strong> Land</li> 
 
 <li><strong>12:</strong> Follow Me</li> 
+
+<li><strong>13:</strong> Precision Land</li> 
 </ul>
   </td>
  <td></td>
@@ -10413,6 +10415,8 @@ table {
 <li><strong>11:</strong> Land</li> 
 
 <li><strong>12:</strong> Follow Me</li> 
+
+<li><strong>13:</strong> Precision Land</li> 
 </ul>
   </td>
  <td></td>
@@ -10447,6 +10451,8 @@ table {
 <li><strong>11:</strong> Land</li> 
 
 <li><strong>12:</strong> Follow Me</li> 
+
+<li><strong>13:</strong> Precision Land</li> 
 </ul>
   </td>
  <td></td>
@@ -10481,6 +10487,8 @@ table {
 <li><strong>11:</strong> Land</li> 
 
 <li><strong>12:</strong> Follow Me</li> 
+
+<li><strong>13:</strong> Precision Land</li> 
 </ul>
   </td>
  <td></td>
@@ -10515,6 +10523,8 @@ table {
 <li><strong>11:</strong> Land</li> 
 
 <li><strong>12:</strong> Follow Me</li> 
+
+<li><strong>13:</strong> Precision Land</li> 
 </ul>
   </td>
  <td></td>
@@ -10549,6 +10559,8 @@ table {
 <li><strong>11:</strong> Land</li> 
 
 <li><strong>12:</strong> Follow Me</li> 
+
+<li><strong>13:</strong> Precision Land</li> 
 </ul>
   </td>
  <td></td>
@@ -10773,21 +10785,6 @@ table {
  <td>m</td>
 </tr>
 <tr>
- <td><strong id="COM_POS_FS_GAIN">COM_POS_FS_GAIN</strong> (INT32)</td>
- <td>Loss of position probation gain factor <p><strong>Comment:</strong> This sets the rate that the loss of position probation time grows when position checks are failing. The default value has been optimised for rotary wing applications. For fixed wing applications a value of 0 should be used.</p>   <p><b>Reboot required:</b> true</p>
-</td>
- <td></td>
- <td>10</td>
- <td></td>
-</tr>
-<tr>
- <td><strong id="COM_POS_FS_PROB">COM_POS_FS_PROB</strong> (INT32)</td>
- <td>Loss of position probation delay at takeoff <p><strong>Comment:</strong> The probation delay is the number of seconds that the EKF innovation checks need to pass for the position to be declared good after it has been declared bad. The probation delay will be reset to this parameter value when takeoff is detected. After takeoff, if position checks are passing, the probation delay will reduce by one second for every lapsed second of valid position down to a minimum of 1 second. If position checks are failing, the probation delay will increase by COM_POS_FS_GAIN seconds for every lapsed second up to a maximum of 100 seconds. The default value has been optimised for rotary wing applications. For fixed wing applications, a value of 1 should be used.</p>   </td>
- <td>1 > 100 </td>
- <td>30</td>
- <td>s</td>
-</tr>
-<tr>
  <td><strong id="COM_POWER_COUNT">COM_POWER_COUNT</strong> (INT32)</td>
  <td>Required number of redundant power modules <p><strong>Comment:</strong> This configures a check to verify the expected number of 5V rail power supplies are present. By default only one is expected. Note: CBRK_SUPPLY_CHK disables all power checks including this one.</p>   </td>
  <td>0 > 4 </td>
@@ -10802,6 +10799,22 @@ table {
 <li><strong>1:</strong> Safety button</li> 
 
 <li><strong>2:</strong> Always</li> 
+</ul>
+  </td>
+ <td></td>
+ <td>0</td>
+ <td></td>
+</tr>
+<tr>
+ <td><strong id="COM_QC_ACT">COM_QC_ACT</strong> (INT32)</td>
+ <td>Set command after a quadchute  <strong>Values:</strong><ul>
+<li><strong>-1:</strong> No action: stay in current flight mode</li> 
+
+<li><strong>0:</strong> Return mode</li> 
+
+<li><strong>1:</strong> Land mode</li> 
+
+<li><strong>2:</strong> Hold mode</li> 
 </ul>
   </td>
  <td></td>
@@ -21576,6 +21589,150 @@ table {
  <td></td>
 </tr>
 <tr>
+ <td><strong id="CAL_BARO0_ID">CAL_BARO0_ID</strong> (INT32)</td>
+ <td>Barometer 0 calibration device ID <p><strong>Comment:</strong> Device ID of the barometer this calibration applies to.</p>   </td>
+ <td></td>
+ <td>0</td>
+ <td></td>
+</tr>
+<tr>
+ <td><strong id="CAL_BARO0_OFF">CAL_BARO0_OFF</strong> (FLOAT)</td>
+ <td>Barometer 0 offset    </td>
+ <td></td>
+ <td>0.0</td>
+ <td></td>
+</tr>
+<tr>
+ <td><strong id="CAL_BARO0_PRIO">CAL_BARO0_PRIO</strong> (INT32)</td>
+ <td>Barometer 0 priority  <strong>Values:</strong><ul>
+<li><strong>-1:</strong> Uninitialized</li> 
+
+<li><strong>0:</strong> Disabled</li> 
+
+<li><strong>1:</strong> Min</li> 
+
+<li><strong>25:</strong> Low</li> 
+
+<li><strong>50:</strong> Medium (Default)</li> 
+
+<li><strong>75:</strong> High</li> 
+
+<li><strong>100:</strong> Max</li> 
+</ul>
+  </td>
+ <td></td>
+ <td>-1</td>
+ <td></td>
+</tr>
+<tr>
+ <td><strong id="CAL_BARO1_ID">CAL_BARO1_ID</strong> (INT32)</td>
+ <td>Barometer 1 calibration device ID <p><strong>Comment:</strong> Device ID of the barometer this calibration applies to.</p>   </td>
+ <td></td>
+ <td>0</td>
+ <td></td>
+</tr>
+<tr>
+ <td><strong id="CAL_BARO1_OFF">CAL_BARO1_OFF</strong> (FLOAT)</td>
+ <td>Barometer 1 offset    </td>
+ <td></td>
+ <td>0.0</td>
+ <td></td>
+</tr>
+<tr>
+ <td><strong id="CAL_BARO1_PRIO">CAL_BARO1_PRIO</strong> (INT32)</td>
+ <td>Barometer 1 priority  <strong>Values:</strong><ul>
+<li><strong>-1:</strong> Uninitialized</li> 
+
+<li><strong>0:</strong> Disabled</li> 
+
+<li><strong>1:</strong> Min</li> 
+
+<li><strong>25:</strong> Low</li> 
+
+<li><strong>50:</strong> Medium (Default)</li> 
+
+<li><strong>75:</strong> High</li> 
+
+<li><strong>100:</strong> Max</li> 
+</ul>
+  </td>
+ <td></td>
+ <td>-1</td>
+ <td></td>
+</tr>
+<tr>
+ <td><strong id="CAL_BARO2_ID">CAL_BARO2_ID</strong> (INT32)</td>
+ <td>Barometer 2 calibration device ID <p><strong>Comment:</strong> Device ID of the barometer this calibration applies to.</p>   </td>
+ <td></td>
+ <td>0</td>
+ <td></td>
+</tr>
+<tr>
+ <td><strong id="CAL_BARO2_OFF">CAL_BARO2_OFF</strong> (FLOAT)</td>
+ <td>Barometer 2 offset    </td>
+ <td></td>
+ <td>0.0</td>
+ <td></td>
+</tr>
+<tr>
+ <td><strong id="CAL_BARO2_PRIO">CAL_BARO2_PRIO</strong> (INT32)</td>
+ <td>Barometer 2 priority  <strong>Values:</strong><ul>
+<li><strong>-1:</strong> Uninitialized</li> 
+
+<li><strong>0:</strong> Disabled</li> 
+
+<li><strong>1:</strong> Min</li> 
+
+<li><strong>25:</strong> Low</li> 
+
+<li><strong>50:</strong> Medium (Default)</li> 
+
+<li><strong>75:</strong> High</li> 
+
+<li><strong>100:</strong> Max</li> 
+</ul>
+  </td>
+ <td></td>
+ <td>-1</td>
+ <td></td>
+</tr>
+<tr>
+ <td><strong id="CAL_BARO3_ID">CAL_BARO3_ID</strong> (INT32)</td>
+ <td>Barometer 3 calibration device ID <p><strong>Comment:</strong> Device ID of the barometer this calibration applies to.</p>   </td>
+ <td></td>
+ <td>0</td>
+ <td></td>
+</tr>
+<tr>
+ <td><strong id="CAL_BARO3_OFF">CAL_BARO3_OFF</strong> (FLOAT)</td>
+ <td>Barometer 3 offset    </td>
+ <td></td>
+ <td>0.0</td>
+ <td></td>
+</tr>
+<tr>
+ <td><strong id="CAL_BARO3_PRIO">CAL_BARO3_PRIO</strong> (INT32)</td>
+ <td>Barometer 3 priority  <strong>Values:</strong><ul>
+<li><strong>-1:</strong> Uninitialized</li> 
+
+<li><strong>0:</strong> Disabled</li> 
+
+<li><strong>1:</strong> Min</li> 
+
+<li><strong>25:</strong> Low</li> 
+
+<li><strong>50:</strong> Medium (Default)</li> 
+
+<li><strong>75:</strong> High</li> 
+
+<li><strong>100:</strong> Max</li> 
+</ul>
+  </td>
+ <td></td>
+ <td>-1</td>
+ <td></td>
+</tr>
+<tr>
  <td><strong id="CAL_GYRO0_ID">CAL_GYRO0_ID</strong> (INT32)</td>
  <td>Gyroscope 0 calibration device ID <p><strong>Comment:</strong> Device ID of the gyroscope this calibration applies to.</p>   </td>
  <td></td>
@@ -23232,16 +23389,32 @@ table {
  <td></td>
 </tr>
 <tr>
- <td><strong id="IMU_GYRO_NF_BW">IMU_GYRO_NF_BW</strong> (FLOAT)</td>
- <td>Notch filter bandwidth for gyro <p><strong>Comment:</strong> The frequency width of the stop band for the 2nd order notch filter on the primary gyro. See "IMU_GYRO_NF_FREQ" to activate the filter and to set the notch frequency. Applies to both angular velocity and angular acceleration sent to the controllers.</p>   <p><b>Reboot required:</b> true</p>
+ <td><strong id="IMU_GYRO_NF0_BW">IMU_GYRO_NF0_BW</strong> (FLOAT)</td>
+ <td>Notch filter bandwidth for gyro <p><strong>Comment:</strong> The frequency width of the stop band for the 2nd order notch filter on the primary gyro. See "IMU_GYRO_NF0_FRQ" to activate the filter and to set the notch frequency. Applies to both angular velocity and angular acceleration sent to the controllers.</p>   <p><b>Reboot required:</b> true</p>
 </td>
  <td>0 > 100 </td>
  <td>20.0</td>
  <td>Hz</td>
 </tr>
 <tr>
- <td><strong id="IMU_GYRO_NF_FREQ">IMU_GYRO_NF_FREQ</strong> (FLOAT)</td>
- <td>Notch filter frequency for gyro <p><strong>Comment:</strong> The center frequency for the 2nd order notch filter on the primary gyro. This filter can be enabled to avoid feedback amplification of structural resonances at a specific frequency. This only affects the signal sent to the controllers, not the estimators. Applies to both angular velocity and angular acceleration sent to the controllers. See "IMU_GYRO_NF_BW" to set the bandwidth of the filter. A value of 0 disables the filter.</p>   <p><b>Reboot required:</b> true</p>
+ <td><strong id="IMU_GYRO_NF0_FRQ">IMU_GYRO_NF0_FRQ</strong> (FLOAT)</td>
+ <td>Notch filter frequency for gyro <p><strong>Comment:</strong> The center frequency for the 2nd order notch filter on the primary gyro. This filter can be enabled to avoid feedback amplification of structural resonances at a specific frequency. This only affects the signal sent to the controllers, not the estimators. Applies to both angular velocity and angular acceleration sent to the controllers. See "IMU_GYRO_NF0_BW" to set the bandwidth of the filter. A value of 0 disables the filter.</p>   <p><b>Reboot required:</b> true</p>
+</td>
+ <td>0 > 1000 </td>
+ <td>0.0</td>
+ <td>Hz</td>
+</tr>
+<tr>
+ <td><strong id="IMU_GYRO_NF1_BW">IMU_GYRO_NF1_BW</strong> (FLOAT)</td>
+ <td>Notch filter 1 bandwidth for gyro <p><strong>Comment:</strong> The frequency width of the stop band for the 2nd order notch filter on the primary gyro. See "IMU_GYRO_NF1_FRQ" to activate the filter and to set the notch frequency. Applies to both angular velocity and angular acceleration sent to the controllers.</p>   <p><b>Reboot required:</b> true</p>
+</td>
+ <td>0 > 100 </td>
+ <td>20.0</td>
+ <td>Hz</td>
+</tr>
+<tr>
+ <td><strong id="IMU_GYRO_NF1_FRQ">IMU_GYRO_NF1_FRQ</strong> (FLOAT)</td>
+ <td>Notch filter 2 frequency for gyro <p><strong>Comment:</strong> The center frequency for the 2nd order notch filter on the primary gyro. This filter can be enabled to avoid feedback amplification of structural resonances at a specific frequency. This only affects the signal sent to the controllers, not the estimators. Applies to both angular velocity and angular acceleration sent to the controllers. See "IMU_GYRO_NF1_BW" to set the bandwidth of the filter. A value of 0 disables the filter.</p>   <p><b>Reboot required:</b> true</p>
 </td>
  <td>0 > 1000 </td>
  <td>0.0</td>
@@ -23367,16 +23540,14 @@ table {
 </tr>
 <tr>
  <td><strong id="SENS_BARO_QNH">SENS_BARO_QNH</strong> (FLOAT)</td>
- <td>QNH for barometer    <p><b>Reboot required:</b> true</p>
-</td>
+ <td>QNH for barometer    </td>
  <td>500 > 1500 </td>
  <td>1013.25</td>
  <td>hPa</td>
 </tr>
 <tr>
  <td><strong id="SENS_BARO_RATE">SENS_BARO_RATE</strong> (FLOAT)</td>
- <td>Baro max rate <p><strong>Comment:</strong> Barometric air data maximum publication rate. This is an upper bound, actual barometric data rate is still dependant on the sensor.</p>   <p><b>Reboot required:</b> true</p>
-</td>
+ <td>Baro max rate <p><strong>Comment:</strong> Barometric air data maximum publication rate. This is an upper bound, actual barometric data rate is still dependant on the sensor.</p>   </td>
  <td>1 > 200 </td>
  <td>20.0</td>
  <td>Hz</td>
@@ -25727,7 +25898,7 @@ table {
  <td>simulated barometer temperature offset    </td>
  <td></td>
  <td>0.0</td>
- <td></td>
+ <td>celcius</td>
 </tr>
 <tr>
  <td><strong id="SIM_GPS_USED">SIM_GPS_USED</strong> (INT32)</td>

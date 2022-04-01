@@ -129,6 +129,7 @@ This are the three next waypoints (or just the next two or one).
 These fields are scaled and offset-compensated where possible and do not
 change with board revisions and sensor updates.
 - [sensor_correction](sensor_correction.md) — Sensor corrections in SI-unit form for the voted sensor
+- [sensor_gnss_relative](sensor_gnss_relative.md) — GNSS relative positioning information in NED frame. The NED frame is defined as the local topological system at the reference station.
 - [sensor_gps](sensor_gps.md) — GPS position in WGS84 coordinates.
 the field 'timestamp' is for the position & velocity (microseconds)
 - [sensor_gyro](sensor_gyro.md)
@@ -140,6 +141,7 @@ the field 'timestamp' is for the position & velocity (microseconds)
 The topic will not be updated when the vehicle is armed
 - [sensor_selection](sensor_selection.md) — Sensor ID's for the voted sensors output on the sensor_combined topic.
 Will be updated on startup of the sensor module and when sensor selection changes
+- [sensors_status](sensors_status.md) — Sensor check metrics. This will be zero for a sensor that's primary or unpopulated.
 - [sensors_status_imu](sensors_status_imu.md) — Sensor check metrics. This will be zero for a sensor that's primary or unpopulated.
 - [system_power](system_power.md)
 - [takeoff_status](takeoff_status.md) — Status of the takeoff state machine currently just availble for multicopters
