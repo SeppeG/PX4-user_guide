@@ -6,9 +6,8 @@ antenna receivers providing heading & pitch or heading & roll angles ideal for a
 Inertial sensor integration of the AsteRx-i family offers a full attitude solution (heading, pitch and roll)
 synchronized with accurate positioning.
 
-The Robotics Interface Board is an optional board that coupled with Septentrio GNSS receiver boards provides common
-interfaces like USB, ethernet, on board logging and other functionalities designed for rapid prototyping, product
-evaluation or efficient integration.
+The Robotics Interface Board coupled with Septentrio GNSS receiver boards provides common interfaces like USB, ethernet,
+on board logging and other functionalities designed for rapid prototyping, product evaluation or efficient integration.
 
 Size: 71.53 x 47.5 x 18.15 mm 
 
@@ -186,7 +185,7 @@ Edit the following parameters in the GPS tab:
   or SBF)
 - [SER_TEL1_BAUD](https://docs.px4.io/master/en/advanced_config/parameter_reference.html#SER_TEL1_BAUD): 115200 8N1
 
-Go to “Tools” &#10095; “Reboot Vehicle”
+Go to “Tools” &#8250; “Reboot Vehicle”
 
 ### Dual antenna
 
@@ -202,7 +201,7 @@ Edit the following parameters in the GPS tab:
 - [GPS_YAW_OFFSET](https://docs.px4.io/master/en/advanced_config/parameter_reference.html#GPS_YAW_OFFSET): set according
   to your setup
 
-Go to “Tools” &#10095; “Reboot Vehicle”
+Go to “Tools” &#8250; “Reboot Vehicle”
 
 :::tip 
 If you want more detailed information about the AsteRx and the Robotics Interface Board, please refer to

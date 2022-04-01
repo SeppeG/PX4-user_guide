@@ -110,11 +110,22 @@ Type: GH connector, 1.25mm pitch, 4way. Mating connector housing: GHR-04V-S
 ![Wiring diagram, Pixhawk 4 - mosaic-go](../../assets/hardware/gps/septentrio_sbf/mosaic-go_wiring.png "Wiring diagram, Pixhawk 4 - mosaic-go")
 
 </div>
+
 1. Make sure the receiver is powered with at least 3.3V. You can use the micro USB connector or the 6-pin connector.
 2. Connect one or two GNSS antennas to the RF-IN ports on the mosaic-go.
 3. Connect the 6-pin connector (COM1) to the Pixhawk's TELEM1 port. This will provide power to the mosaic-go and with
    this single connection it will be able to send single and dual antenna information to the Pixhawk 4.
 
+:::warning
+Make sure the JST cable is wired correctly (since this is not a standard cable):
+
+<div style="text-align: center;">
+
+![Wiring of JST cable](../../assets/hardware/gps/septentrio_sbf/JST-cable.png "Wiring of JST cable")
+
+</div>
+
+:::
 :::note 
 PX4 will ensure that the GNSS module is automatically configured however, if you have a dual antenna setup, it
 is required to set the layout as accurately as possible in the web app.
@@ -139,17 +150,6 @@ To enable multi-antenna attitude determination, follow the following procedure:
    frame, or the main-aux1 baseline may not be exactly parallel or perpendicular to the
    longitudinal axis of the vehicle. This leads to offsets in the computed attitude angles.
    These offsets can be compensated for with the **setAttitudeOffset** command.
-
-:::warning
-Make sure the JST cable is wired correctly:
-
-<div style="text-align: center;">
-
-![Wiring of JST cable](../../assets/hardware/gps/septentrio_sbf/JST-cable.png "Wiring of JST cable")
-
-</div>
-
-:::
 
 :::note 
 For optimal heading results, the two antennas should be seperated by at least 30cm / 11.8 in (ideally 50cm /
@@ -193,7 +193,7 @@ Edit the following parameters in the GPS tab:
   or SBF)
 - [SER_TEL1_BAUD](https://docs.px4.io/master/en/advanced_config/parameter_reference.html#SER_TEL1_BAUD): 115200 8N1
 
-Go to “Tools” &#10095; “Reboot Vehicle”
+Go to “Tools” &#8250; “Reboot Vehicle”
 
 ### Dual antenna
 
@@ -209,7 +209,7 @@ Edit the following parameters in the GPS tab:
 - [GPS_YAW_OFFSET](https://docs.px4.io/master/en/advanced_config/parameter_reference.html#GPS_YAW_OFFSET): set according
   to your setup
 
-Go to “Tools” &#10095; “Reboot Vehicle”
+Go to “Tools” &#8250; “Reboot Vehicle”
 
 
 ## LED Status
